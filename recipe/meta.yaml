@@ -1,4 +1,4 @@
-{% set version = "0.9.3" %}
+{% set version = "0.9.5" %}
 
 package:
   name: cglm
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/recp/cglm/archive/v{{ version }}.tar.gz
-  sha256: 4eda95e34f116c36203777f4fe770d64a3158b1450ea40364abb111cf4ba4773
+  sha256: 1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435
   patches:
     - windows_dll_name.patch
 
@@ -18,6 +18,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - cmake
     - make    # [unix]
     - ninja   # [win]
